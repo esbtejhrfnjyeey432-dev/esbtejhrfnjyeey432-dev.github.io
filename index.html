@@ -222,8 +222,9 @@
     </div>
     <div class="cta reveal">
       <a class="btn btn-primary" href="https://github.com/esbtejhrfnjyeey432-dev">GitHub ↗</a>
+      <button class="btn btn-ghost" style="cursor:pointer;font-family:inherit" onclick="copyEmail()">📮 复制邮箱</button>
     </div>
-    <p class="reveal" style="text-align:center;color:var(--muted);margin-top:26px;font-size:16px">📮 邮箱：320551686@qq.com</p>
+    <p id="emailTip" style="text-align:center;color:var(--accent2);margin-top:16px;font-size:14px;opacity:0;transition:opacity .3s">已复制：320551686@qq.com</p>
   </section>
 </main>
 
@@ -254,6 +255,21 @@
     });
   },{threshold:.6});
   nums.forEach(el=>io2.observe(el));
+
+  // 复制邮箱（点击复制号码，不跳转）
+  function copyEmail(){
+    const tip = document.getElementById('emailTip');
+    if(navigator.clipboard){
+      navigator.clipboard.writeText('320551686@qq.com').then(()=>{
+        tip.style.opacity = 1;
+        setTimeout(()=> tip.style.opacity = 0, 2000);
+      });
+    } else {
+      tip.textContent = '邮箱：320551686@qq.com';
+      tip.style.opacity = 1;
+      setTimeout(()=> tip.style.opacity = 0, 3000);
+    }
+  }
 </script>
 </body>
 </html>
