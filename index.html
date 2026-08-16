@@ -192,7 +192,7 @@
         <ul class="more">
           <li>覆盖中年转行 / 青年爱好 / 儿童天赋 / 老年兴趣四类人群</li>
           <li>13 步探索闭环 + 六大模块设计</li>
-          <li>不「算命」，陪跑式小任务逐步验证</li>
+          <li>成长探索：通过小任务逐步验证、慢慢成长</li>
         </ul>
         <div class="links">
           <a href="https://github.com/esbtejhrfnjyeey432-dev/growth-explorer" target="_blank">GitHub 仓库 ↗</a>
@@ -223,9 +223,9 @@
     </div>
     <div class="cta reveal">
       <a class="btn btn-primary" href="https://github.com/esbtejhrfnjyeey432-dev">GitHub ↗</a>
-      <button class="btn btn-ghost" style="cursor:pointer;font-family:inherit" onclick="copyEmail()">📮 邮箱</button>
+      <button class="btn btn-ghost" style="cursor:pointer;font-family:inherit" onclick="showEmail()">📮 邮箱</button>
     </div>
-    <p id="emailTip" style="text-align:center;color:var(--accent2);margin-top:16px;font-size:14px;opacity:0;transition:opacity .3s">320551686@qq.com（已复制）</p>
+    <p id="emailTip" style="text-align:center;color:var(--accent2);margin-top:16px;font-size:16px;opacity:0;transition:opacity .3s">320551686@qq.com</p>
   </section>
 </main>
 
@@ -257,19 +257,10 @@
   },{threshold:.6});
   nums.forEach(el=>io2.observe(el));
 
-  // 复制邮箱（点击复制号码，不跳转）
-  function copyEmail(){
+  // 点击邮箱按钮，显示邮箱号码（访客自行复制）
+  function showEmail(){
     const tip = document.getElementById('emailTip');
-    if(navigator.clipboard){
-      navigator.clipboard.writeText('320551686@qq.com').then(()=>{
-        tip.style.opacity = 1;
-        setTimeout(()=> tip.style.opacity = 0, 2000);
-      });
-    } else {
-      tip.textContent = '邮箱：320551686@qq.com';
-      tip.style.opacity = 1;
-      setTimeout(()=> tip.style.opacity = 0, 3000);
-    }
+    tip.style.opacity = 1;
   }
 </script>
 </body>
